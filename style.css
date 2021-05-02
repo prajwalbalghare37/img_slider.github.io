@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #111;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10000;
+}
+
+header .logo {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+header .toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url('menu.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: #000;
+}
+
+.slider .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s 0s;
+    z-index: 1;
+    clip-path: circle(0px at center);
+}
+
+.slider input[type="radio"]:checked+.imgBx {
+    z-index: 10;
+    clip-path: circle(1000px at center);
+    transition-delay: 0.75s;
+}
+
+.slider .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .imgBx .content {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+}
+
+.slider .imgBx .content h2 {
+    font-size: 6em;
+    line-height: 1em;
+    color: #fff;
+}
+
+.slider .imgBx .content p {
+    font-size: 1.1em;
+    color: #fff;
+}
+
+.slider .imgBx .content a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 30px;
+    background: #fff;
+    color: #111;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.slider input[type="radio"] {
+    position: relative;
+    z-index: 100;
+    margin: 5px;
+    margin-bottom: 40px;
+    outline: none;
+    cursor: pointer;
+}
+
+@media (max-width:768px) {
+    header {
+        padding: 10px 20px;
+    }
+    .slider .imgBx {
+        padding: 40px;
+    }
+    .slider .imgBx .content h2 {
+        font-size: 3em;
+    }
+    .slider .imgBx .content p {
+        font-size: 1em;
+        margin-top: 10px;
+    }
+}
